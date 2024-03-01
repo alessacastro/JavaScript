@@ -1,0 +1,30 @@
+/* refazendo o exercício 4 do IMC, organizando em funções */
+
+function calcularImc(peso, altura){ /*função para cálculo do imc */
+    return peso / Math.pow(altura,2);
+}
+
+function classificarImc (imc) { /*função para classificar o imc */
+    if (imc < 18.5) {
+        return 'Você está abaixo do peso'; 
+    } else if  (18.5 >= imc && imc < 25) {
+        return 'Você está com peso normal';
+    } else if   (25 >= imc && imc < 30) {
+        return 'Você está acima do peso';
+    } else if  (30 >= imc && imc < 40) {
+        return 'Você está obeso';
+    } else {
+    return 'Você está com obesidade grave';
+    }
+}
+
+function main(){ /*função main */
+    const altura = 1.65;
+    const peso = 56;
+    const imc = calcularImc(peso, altura).toFixed(2);
+
+    console.log('IMC igual a', imc,);
+    console.log(classificarImc(imc));
+}
+
+main();
